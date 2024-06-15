@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Button, ScrollView, Image } from 'react-native';
+import Card from '../../components/Card';
 import styles from './style';
 
 const ExploreScreen = () => {
@@ -21,10 +22,7 @@ const ExploreScreen = () => {
 
   const renderCards = () => {
     return data[view].map((item) => (
-      <View key={item.id} style={styles.card}>
-        <Image source={{ uri: item.image }} style={styles.image} />
-        <Text style={styles.details}>{item.details}</Text>
-      </View>
+      <Card key={item.id} image={item.image} details={item.details} />
     ));
   };
 
